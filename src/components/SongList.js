@@ -31,13 +31,13 @@ class SongList extends Component {
     };
 }
 
+// selecting the part of the data from the store that the connected component needs (songs)
 const mapStateToProps = (state) => {
-    console.log(state);
     return { songs: state.songs };
 }
 
 // second argument 'selectSong': passes action as a prop into the component
 export default connect(
     mapStateToProps,
-    { selectSong: selectSong } // you could also simply write: { selectSong }
+    { selectSong } // you could also simply write: { selectSong: selectSong }
     )(SongList); 
